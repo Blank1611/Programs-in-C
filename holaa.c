@@ -24,7 +24,6 @@ int place()
     {
        printf("%d-%s\n",i,places[i]);
     }
-
 }
 //Function definition for displaying Destination Location
 int destination()
@@ -32,20 +31,15 @@ int destination()
     int j;
     for (j=0;j<5;j++)
     {
-
         if (j==sourc)
         {
-
              continue;
         }
         else
         {
             printf("%d-%s\n",j,places[j]);
-            //printf("\nDistance:%f\tFare:%f",dist[i][count],fare[i]);
-
         }
     }
-
 }
 //Calulation of Fare according to the User Preferences
 int pricing()
@@ -72,18 +66,14 @@ int options()
         {
             printf("\nYour Booking has been confirmed!!!\nThank you for using our services!!");
         }
-
-
         else if(opt==2)
         {
             printf("\nPlease select the new preferences:");
         }
-
         else
         {
             printf("\nThank you for using our services");
         }
-
 }
 int main()
 {
@@ -107,5 +97,4 @@ int main()
         options(opt);
     }while(opt==2);
     return 0;
-
 }
