@@ -14,7 +14,12 @@ char transport_mode[5][100]={"Auto","Micro","Mini","SUV"};
 //List of Base Fare
 float mode_price[4]={5,8,10,12};
 //Distance form the respective Source to Destination
-float dist[5][4]={{60,55,57,46},{60,15,45,50},{55,15,30,40},{40,45,30,70},{46,50,40,70}};
+float dist[5][4]={{60,55,57,46},
+                  {60,15,45,50},
+                  {55,15,30,40},
+                  {40,45,30,70},
+                  {46,50,40,70}
+                 };
 //Function definition for displaying Source Location
 int place()
 {
