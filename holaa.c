@@ -13,6 +13,7 @@ char places[5][100]={"Chennai","Sathyabama","Shollingnallur","Tambaram","T Nagar
 char transport_mode[5][100]={"Auto","Micro","Mini","SUV"};
 //List of Base Fare
 float mode_price[4]={5,8,10,12};
+<<<<<<< HEAD
 //Distance from the respective Source to Destination
 float dist[5][4]={
         {60,55,57,46},
@@ -23,6 +24,15 @@ float dist[5][4]={
         };
 //Average speed
 float speed[5]={25,45,45,40};
+=======
+//Distance form the respective Source to Destination
+float dist[5][4]={{60,55,57,46},
+                  {60,15,45,50},
+                  {55,15,30,40},
+                  {40,45,30,70},
+                  {46,50,40,70}
+                 };
+>>>>>>> ed2e18ed9215cc7763e4b0830dbd8c57d0d5b3fc
 //Function definition for displaying Source Location
 int place()
 {
