@@ -8,7 +8,7 @@
 unsigned short sourc,dest,mode,opt;
 //Declaration and Initialization of required arrays
 //List of source places
-char z[5][100]={"Chennai","Sathyabama","Shollingnallur","Tambaram","T Nagar"};
+char places[5][100]={"Chennai","Sathyabama","Shollingnallur","Tambaram","T Nagar"};
 //List of cab service types
 char transport_mode[5][100]={"Auto","Micro","Mini","SUV"};
 //List of Base Fare
@@ -22,7 +22,7 @@ int place()
 
     for(i=0;i<5;i++)
     {
-       printf("%d-%s\n",i,z[i]);
+       printf("%d-%s\n",i,places[i]);
     }
 
 }
@@ -40,7 +40,7 @@ int destination()
         }
         else
         {
-            printf("%d-%s\n",j,z[j]);
+            printf("%d-%s\n",j,places[j]);
             //printf("\nDistance:%f\tFare:%f",dist[i][count],fare[i]);
 
         }
@@ -54,7 +54,7 @@ int pricing()
     totalfare=((dist[sourc][dest]-5)*mode_price[mode]+5*(2*mode_price[mode]));
     totalfare=(tax*totalfare+totalfare);
     printf("\nThe fare for %s from:",transport_mode[mode]);
-    printf("\n%s to %s is:%.3f:",z[sourc],z[dest],totalfare);
+    printf("%s to %s is:%.3f:",places[sourc],places[dest],totalfare);
 }
 //Function definition for display of Cab Services types
 int mod()
@@ -68,23 +68,22 @@ int mod()
 //options after selections
 int options()
 {
-    switch (opt)
-    {
-        case 1:
+        if (opt==1)
+        {
             printf("\nYour Booking has been confirmed!!!\nThank you for using our services!!");
-            break;
-        case 2:
+        }
+
+
+        else if(opt==2)
+        {
             printf("\nPlease select the new preferences:");
-            break;
-        case 3:
+        }
+
+        else
+        {
             printf("\nThank you for using our services");
-            break;
+        }
 
-
-        default:
-            printf("\nPlease choose a valid option!!!");
-                break;
-    }
 }
 int main()
 {
@@ -106,15 +105,7 @@ int main()
         printf("\nPress 3 to Cancel the Ride\n");
         scanf("%d",&opt);
         options(opt);
-        return opt;
-
-
-
-
-
-
-
-    }while(opt!=3 || opt!=1);
+    }while(opt==2);
     return 0;
 
 }
