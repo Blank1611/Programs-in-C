@@ -6,7 +6,6 @@
 #define tax 0.05
 //Declaration of required variables
 unsigned short sourc,dest,mode,opt;
-char buffe[4][100];
 //Declaration and Initialization of required arrays
 //List of source places
 char z[5][100]={"Chennai","Sathyabama","Shollingnallur","Tambaram","T Nagar"};
@@ -31,20 +30,19 @@ int place()
 int destination()
 {
     int j;
-    int count=1;
     for (j=0;j<5;j++)
     {
 
         if (j==sourc)
         {
+
              continue;
         }
         else
         {
-            printf("%d-%s\n",count,z[j]);
+            printf("%d-%s\n",j,z[j]);
             //printf("\nDistance:%f\tFare:%f",dist[i][count],fare[i]);
-            strcpy(buffe[j] ,z[j]);
-            count=count+1;
+
         }
     }
 
@@ -53,11 +51,10 @@ int destination()
 int pricing()
 {
     float totalfare;
-    dest=dest-1;
     totalfare=((dist[sourc][dest]-5)*mode_price[mode]+5*(2*mode_price[mode]));
     totalfare=(tax*totalfare+totalfare);
     printf("\nThe fare for %s from:",transport_mode[mode]);
-    printf("\n%s to %s is:%.3f:",z[sourc],buffe[dest],totalfare);
+    printf("\n%s to %s is:%.3f:",z[sourc],z[dest],totalfare);
 }
 //Function definition for display of Cab Services types
 int mod()
@@ -109,6 +106,7 @@ int main()
         printf("\nPress 3 to Cancel the Ride\n");
         scanf("%d",&opt);
         options(opt);
+        return opt;
 
 
 
